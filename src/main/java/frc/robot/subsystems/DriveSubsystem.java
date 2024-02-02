@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.Joystick;
 import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
+//import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 
 // import frc.robot.commands.Drive;
 // import frc.robot.Constants;
@@ -31,22 +32,29 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public void drive(Joystick joystick) {
-    double right = joystick.getRawAxis(5);
-    double left = joystick.getRawAxis(1);
+    double right = joystick.getRawAxis(2);
+    right = joystick.getRawAxis(5);
+    double left = joystick.getRawAxis(3);
+    left = joystick.getRawAxis(1);
 
-    if (joystick.getRawAxis(3) >= 0.5) {
-      speedUp();
-    } else if (joystick.getRawAxis(2) >= 0.5) {
-      slowDown();
-    } else {
-      resetSpeed();
-    }
+    // if (joystick.getRawAxis(3) >= 0.5) {
+    //   speedUp();
+    // } else if (joystick.getRawAxis(2) >= 0.5) {
+    //   slowDown();
+    // } else {
+    //   resetSpeed();
+    // }
     
     right *= speed;
     left *= speed;
     
     setRight(left);
     setLeft(right);
+
+    // setting rumble 
+    //if (joystick.getRawAxis(5) >= 0.8){
+    //  controller.setRumble(RumbleType.kRightRumble, 1.0);
+    //}
 
     // Constants.Motors.left2.set(VictorSPXControlMode.PercentOutput, 0.5);
   }
