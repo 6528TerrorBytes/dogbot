@@ -45,8 +45,8 @@ public class DriveSubsystem extends SubsystemBase {
     right *= speed;
     left *= speed;
     
-    setRight(right);
-    setLeft(left);
+    setRight(left);
+    setLeft(right);
 
     // Constants.Motors.left2.set(VictorSPXControlMode.PercentOutput, 0.5);
   }
