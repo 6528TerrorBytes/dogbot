@@ -8,7 +8,7 @@ package frc.robot;
 import frc.robot.subsystems.DriveSubsystem;
 // import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
-import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -16,6 +16,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Drive;
 import frc.robot.commands.SpeedUp;
 import frc.robot.commands.SlowDown;
+import frc.robot.commands.RotateLeft;
+import frc.robot.commands.RotateRight;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -51,8 +53,8 @@ public class RobotContainer {
     JoystickButton leftBack = new JoystickButton(trigger, 5);
     JoystickButton rightBack = new JoystickButton(trigger, 6);
 
-    leftBack.whileTrue(new SlowDown());
-    rightBack.whileTrue(new SpeedUp());
+    leftBack.whileTrue(new RotateLeft());
+    rightBack.whileTrue(new RotateRight());
   }
 
   /**
